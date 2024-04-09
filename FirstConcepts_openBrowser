@@ -1,0 +1,27 @@
+package LearnautomationOnline;
+
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class FirstConcepts {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeOptions option = new ChromeOptions();
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Barrla\\Desktop\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver(option);
+	driver.get("https://www.google.co.in");
+	//driver.get("https://www.leafground.com/window.xhtml");
+	//driver.navigate().to("http://localhost/Admin/SAdmin/Login.aspx");
+	option.addArguments("--remote-allow-origins=*");
+	option.addArguments("--incognito");
+	option.addArguments("--headless");
+	  option.addArguments("--window-size=1200,800"); // Set the window size
+	  
+	 
+LoginPageObjects.username(driver).sendKeys("9100091000");
+LoginPageObjects.password(driver).sendKeys("456123");
+LoginPageObjects.submit(driver).click();
